@@ -1,1 +1,1 @@
-// TypeScript starter code for class
+// TypeScript started code for class
