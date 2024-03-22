@@ -1,0 +1,39 @@
+<!-- HTML code for the Client Meetings Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Meetings</title>
+    <!-- Linking to the external stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container to hold the content -->
+    <div class="container">
+        <!-- Heading for the page -->
+        <h1>Schedule Client Meeting</h1>
+        <!-- Form for scheduling client meetings -->
+        <form action="#" method="post">
+            <!-- Form field for meeting date -->
+            <div class="form-group">
+                <label for="meetingDate">Meeting Date:</label>
+                <input type="date" id="meetingDate" name="meetingDate" required>
+            </div>
+            <!-- Form field for meeting time -->
+            <div class="form-group">
+                <label for="meetingTime">Meeting Time:</label>
+                <input type="time" id="meetingTime" name="meetingTime" required>
+            </div>
+            <!-- Form field for meeting description -->
+            <div class="form-group">
+                <label for="meetingDescription">Meeting Description:</label>
+                <textarea id="meetingDescription" name="meetingDescription" rows="4" required></textarea>
+            </div>
+            <!-- Button to submit the form -->
+            <button type="submit">Schedule Meeting</button>
+        </form>
+    </div>
+</body>
+</html>
