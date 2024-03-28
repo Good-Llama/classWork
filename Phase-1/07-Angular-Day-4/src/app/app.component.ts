@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SampleFormComponent } from './sample-form/sample-form.component';
+import { StateSealsComponent } from './state-seals/state-seals.component';
 
 @Component({ // Metadata for the component - gives Angular some basic info
   selector: 'app-root',  // This is what is used to include this component 

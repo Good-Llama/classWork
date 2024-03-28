@@ -43,12 +43,11 @@ function sumAllNumbers(numbersToSum) {
     //                    we will call the current element of the array aNumber
     // when .reduce() is done, it returns the final value in reducer (sum)
     //      which we will return from this function
-    return numbersToSum.reduce(function (sum, aNumber) {
+    return numbersToSum.reduce((sum, aNumber) => {
         sum += aNumber; // add the current elem to sum
         return sum;
     });
-    console.log('---- .reduce examples ----');
-    console.log(numbersToSum(10, 20, 30));
+
     /* alternate solutions
         return numbersToSum.reduce((sum, aNumber) => { return sum += aNumber; });
     */
@@ -80,13 +79,13 @@ function sumAllNumbers(numbersToSum) {
  *   multiples of 3
  */
 function allDivisibleByThree(numbersToFilter) {
-    return numbersToFilter.filter(function (currElem) {
+    return numbersToFilter.filter( (currElem) => {
         if (currElem % 3 == 0) { // is currElem a multiple of 3
             return true; // it should be in new array
         }
         return false; // if not a multiple of 3 return false
     });
-    /* alternate solutions
+    /* alternate solutions                  return the result of this expression
       return numbersToFilter.filter((currElem) => {return currElem % 3 == 0)})
     
       return numbersToFilter.filter((currElem) => {return !currElem % 3})  // Uses truthy/falsy concept
@@ -120,7 +119,7 @@ function mapArrayFunctionExample() {
        the arrow-func performs a process on the current element and returns it
        .map() adds the value returned from teh anon-func to the new array
     */
-    var squaredNumbers = numbersToSquare.map(function (number) {
+    var squaredNumbers = numbersToSquare.map( (number) => {
         return number * number; // square the current element and return it
     });
     console.log("Array returned from map with values in passed array squared: ");
@@ -137,7 +136,7 @@ function forEachExample(anArray) {
         "JC", "Daniel", "Amber", "Dana", "Jess", "Vanese", "Ruben",
         "Lindsay", "Anthony", "Lorenzo"]; }
     // forEach() is the JavaScript version of the for-each look in Java
-    anArray.forEach(function (anElement) {
+    anArray.forEach( (anElement) => {
         console.log(anElement);
     });
     anArray.sort(); // sort function sorts an array and replace original

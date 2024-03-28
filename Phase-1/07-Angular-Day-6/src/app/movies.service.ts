@@ -1,18 +1,35 @@
-import { Injectable, NgModule } from '@angular/core';
-import { MoviesInfo } from './moviesInfo';
-import { NgModel } from '@angular/forms';
-import { MovieListComponent } from './movie-list/movie-list.component';
+/*****************************************************************************************************************************
 
+This is a service
 
+A service is a set of processing to facilitate the retrieval and storage of data - typically in a persistent source (i.e. saved)
+
+May do other processing as well 
+
+This service DOES NOT save the data to a persistent source
+
+The data from this service is just an array in memory 
+
+******************************************************************************************************************************/
+
+import { Injectable, NgModule } from '@angular/core'; // Access Angular Dependency Injection
+import { MoviesInfo }           from './moviesInfo';  // Using the MoviesInfo interface
+
+// @Injectable tells Angular that this service may be Dependency Injection
 @Injectable({
   providedIn: 'root'
 })
 
-
-
 export class MoviesService {
 
-  private listOfMovies : MoviesInfo[] = []
+  // A module contains data and methods/functions for processing that data
+
+  // Source of the data for calls to retrieve the data - initialized in the code
+  private listOfMovies : MoviesInfo[] = []   // An array of MovieInfo objects
+
+// a constructor is a method to initialize data defined in the module
+// it is executed automatically when the service is loaded
+// Here we use the constructor to initialize our data source 
 
   constructor() { 
     this.listOfMovies.push({title: "Godfather"                         , releaseYear: 1972, director: "Francis Ford Coppola"})
@@ -20,15 +37,19 @@ export class MoviesService {
     this.listOfMovies.push({title: "Star Trek: The Wrath of Khan"      , releaseYear: 1982, director: "Nicholas Meyer"})
     this.listOfMovies.push({title: "Star Wars: The Empire Strikes Back", releaseYear: 1980, director: "Irvin Kershner"})
   }
+// methods others may use to iinteract with our service
 
-  getMoviesList() : MoviesInfo[] {
-    return this.listOfMovies;
-  }
-  addMovies(newMovie : MoviesInfo) {
-    console.log(`in addMovies in movies.service.ts`)
-    console.table(newMovie)
-    this.listOfMovies.push(newMovie)
-    console.table(this.listOfMovies)
-  }
+// This method will return the current data in our data source (listsOfMovies)
+//  name(parameters)  :  return-type-of-data-returned
+    getMoviesList()   : MoviesInfo[] {  // this function returns a MoviesInfo array
+      return this.listOfMovies;
+    }
+// This method will receive a MoviesInfo object and add it to our data source (listOfMovies)
+    addMovies(newMovie : MoviesInfo) {
+      // console.log(`in addMovies in movies.service.ts`)
+      console.table(newMovie)        // optional - verify new movie data 
+      this.listOfMovies.push(newMovie)
+      console.table(this.listOfMovies)   // optional - verify new movie was added to the array
+    }
  
 }

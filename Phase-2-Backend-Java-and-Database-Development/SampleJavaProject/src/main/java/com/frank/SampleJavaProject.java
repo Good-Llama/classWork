@@ -1,37 +1,72 @@
+// Same comments syntax as JavaScript
+
+
+// Everything in Java is part of a "package"
+// A package is a group of related Java entities/elements/things/stuff
+
 package com.frank;
 
-import java.util.Scanner;
+import java.util.Scanner;  // gaining access to code in a different package
+
+// A class is a group of related application information
+// A class is associated with a package
 
 public class SampleJavaProject {
     
-    public static void main(String[] args) {
+    // Every application has exactly one function called main
+    // The main() function is the starting point for the application
+    // When the application is run, the main function is executed
+    
+    // Every function has a function header which describes the function
+    //	return-type  name(parameters)
+    //
+    // Things in class may be assigned access-modifier
+    //
+    //		public  - anyone can access or use it
+    //		private - only members of the class can access (Object-Oriented programming)
+    //
+    // static - tells Java there is only one of these in the application
+    
+    
+    public static void main(String[] args) { 	// main is function that returns nothing (void)
+						// 	and receives a String array parameter		
 	
+	// System.out.println() displays whatever is inside the () on the screen
+	// (it's the Java version of console.log() in JavaScript)
         System.out.println("Hello Java Learner!");
 /************************************************************************************************
  * Variable definition examples        
  *************************************************************************************************/
+// to define a variable in Java:	datatype name ; -or- data-type name = initial-value;
+// 
+// If you do not assign a variable and initial value
+//        correctly, it generally cannot be used correctly
         int 	num1;
-        int 	num2   = 0;
-//      int     num3   - 1.99;
+        int 	num2   = 21;
+//        int     num3   = 1.99; // cannot store a double value in an int
         
-        double 	amount = 19.95;
-        float 	cost   = 9.99F;
+        double 	amount 	= 19.95;
+        float 	cost   	= 9.99F; 	// F (or f) designates the value as a floating value
+//        float 	amt   	= 9.99; 	// cannot store a double value in a float
+
+        char	letter = 'a';		// a single character is enclosed in ''
         
-        char	letter = 'a';
-        
-        String  sentence  = "I love programming!";
+        String  sentence  = "How much wood wood a woodchuck chuck?!?"; // a series of characters (String) in ""
         
         boolean isOk      = true;
+        // indicate an array variable using [] (like in JavaScript)
+        // datatype name[]  = {initializers-separated-by-commas};
+        String  charles[] = {"Diana", "William", "Harry"}; // define and initialize an array
         
-        String  charles[] = {"Diana", "William", "Harry"};
-        
-        int	scores[]  = new int[5];
+        // datatype name[] = new datatype[number-of-elements];
+        int	scores[]  = new int[5]; // define an array to hold 5 elements (default initializer 0)
         
         System.out.println("-".repeat(50));
         System.out.println("Displaying contents of variables");
         System.out.println("-".repeat(50));
         
-//      System.out.println("num1 is: " + num1);
+        // + when used with a String means concatenation = stick the string at the end of the other string        
+//      System.out.println("num1 is: " + num1); // error since num1 has not been initialized
         System.out.println("num2 is: " + num2);
         System.out.println("amount is: " + amount + " cost is: " + cost);
         System.out.println("letter is: " + letter);
@@ -43,6 +78,7 @@ public class SampleJavaProject {
         System.out.println("Displaying array contents using System.out.println");
         System.out.println("-".repeat(50));
         
+// the iterative for-loop in Java is exactly like the for-loop in JavaScript        
         System.out.println("Contents of array charles...");
         for(int i=0; i < charles.length; i++) {
             System.out.println("charles array element " + i + " is: " + charles[i]);

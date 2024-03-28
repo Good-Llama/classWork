@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // FormsModule is required if the component uses html forms 
 import { FormsModule } from '@angular/forms'
+import { StateSealsComponent } from '../state-seals/state-seals.component';
 
 // @Component includes the Component in the imports array metadata
 @Component({
   selector: 'sample-form', // this is the tag used inany page to include this component
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, StateSealsComponent],
   templateUrl: './sample-form.component.html',
   styleUrl: './sample-form.component.css'
 })
@@ -29,6 +30,13 @@ export class SampleFormComponent {
     public email = "";
     public email_preference = "";
 
+
+    // Typically checkbox values are stored arrays of objects
+    // attribute : datatype = initial-value -- object with 2 attributes
+    // name:    - what is displayed in the list of choices
+    // value:   - what is stored when checkbox is checked
+
+
     checkboxes: any[] = [
       { name: 'American Football', value: 'Football' },
       { name: 'European Football', value: 'Soccer' },
@@ -41,6 +49,7 @@ export class SampleFormComponent {
 
     // a method to process any data accessible to the component
     // this. tells Angular the data is in this component
+
     onSubmit() {
       console.log(`-----------------------------------------------`)
       console.log(` First name: ${this.fname}`)
@@ -62,8 +71,12 @@ export class SampleFormComponent {
             val.checked = true;
           });
       }
-    
+    //
       get checkBoxResult() {
+        //
+        //
+        // 
+        // 
         return this.checkboxes.filter((item) => item.checked);
       }
 
