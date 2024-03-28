@@ -1,5 +1,7 @@
 // Same comments syntax as JavaScript
 
+// All statements in Java require a ; at the end (unlike JavaScript)
+
 // Everything in Java is part of a "package"
 // A package is a group of related Java entities/elements/things/stuff
 package com.frank;
@@ -100,14 +102,20 @@ public class SampleJavaProject {
 /************************************************************************************************
  * Keyboard interaction with user example
  **************************************************************************************************/
+
         displaySectionHeader("Keyboard input demo", true);
         
+//      Define a Scanner object to represent the keyboard
+//      Java defines the System.in object to represent the keyboard
+        
+//      class 	object-name = new class  (parameters)
         Scanner theKeyboard = new Scanner(System.in);
         
-        String aLine;
+        String aLine;	// hold a line of keyboard input returned from our Scanner object
         
         System.out.println("Please enter your name: ");
-        String userName = theKeyboard.nextLine();
+//        				object.method()
+        String userName = theKeyboard.nextLine(); // Ask the Scanner object to get the nextLine from the keyboard
         
         System.out.println("Hello, " + userName + " nice to meet you!\n");
         
@@ -115,7 +123,8 @@ public class SampleJavaProject {
         
         aLine = theKeyboard.nextLine();
         
-        String numbers[] = aLine.split(",");
+        // Using the .split() for String to separate the values based on the comma entered with data
+        String numbers[] = aLine.split(","); // store the values separated by commas in a String array
         	
         for(int i=0; i < numbers.length; i++) {
             System.out.println("You entered: " + numbers[i]);
@@ -131,21 +140,24 @@ public class SampleJavaProject {
         
         System.out.println("Hello " + userName + "!");
         
-        int numberOfValuesEnteredByUser = 0;
+        int numberOfValuesEnteredByUser = 0; // keep track of the number of values entered by the user
         
-        boolean shouldLoop = true;
+        boolean shouldLoop = true; // Loop control variable that will be set to false when we end the loop
         
+        // Loop while the shouldLoop value is true AND the maximum number of values we can hold in array has been reached
         while(shouldLoop && numberOfValuesEnteredByUser < numbersEnteredByUser.length )
         {
             System.out.println("Would you like to enter some data? (Y or N)");
-            aLine = theKeyboard.nextLine();
+            aLine = theKeyboard.nextLine(); // get a line from the user
             
-            if(!aLine.substring(0,1).toUpperCase().equals("Y")) {
-        	break;
+            // Accept any word that starts with "Y" to mean yes - note to convert to uppercase
+            if(!aLine.substring(0,1).toUpperCase().equals("Y")) { 	// if 1st character is not a "Y"
+        	break;							// exit the loop
             }
             System.out.print("Please enter a numeric value: ");
             aLine = theKeyboard.nextLine();
             
+            //Convert the line entered by the user to double value
             double userEnteredValue = Double.parseDouble(aLine);
             
             numbersEnteredByUser[numberOfValuesEnteredByUser] = userEnteredValue;
